@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', sans-serif;
+  background-color: #050B1F;
+  color: #E8F4FD;
+  /* Design system tokens */
+  --bg-900: #050B1F;
+  --bg-800: #07132A;
+  --surface: rgba(255,255,255,0.04);
+  --muted: rgba(232,244,253,0.65);
+  --primary: #3EE6C2;
+  --accent: #7C5CFF;
+  --aqi-good: #00C853;
+  --aqi-moderate: #FFB300;
+  --aqi-unhealthy: #FF6D00;
+  --aqi-very-unhealthy: #D50000;
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #050B1F 0%, #07132A 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button, select, input, textarea {
+  font: inherit;
+}
+
+.glass-panel {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-card {
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(3,6,23,0.6);
+}
+
+.aqi-badge.good { color: var(--aqi-good); }
+.aqi-badge.moderate { color: var(--aqi-moderate); }
+.aqi-badge.unhealthy { color: var(--aqi-unhealthy); }
+.aqi-badge.very-unhealthy { color: var(--aqi-very-unhealthy); }

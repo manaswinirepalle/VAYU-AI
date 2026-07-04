@@ -1,0 +1,25 @@
+{
+  "Vizag": {
+    "aqi": 168,
+    "category": "Unhealthy for sensitive groups",
+    "temperature": 31,
+    "humidity": 70,
+    "wind": 12,
+    "neighbourhoods": [
+      {"name": "Gajuwaka", "aqi": 182, "risk": "High"},
+      {"name": "Rushikonda", "aqi": 121, "risk": "Moderate"},
+      {"name": "Madhurawada", "aqi": 155, "risk": "High"}
+    ]
+  },
+  "Delhi": {
+    "aqi": 242,
+    "category": "Very Unhealthy",
+    "temperature": 36,
+    "humidity": 45,
+    "wind": 8,
+    "neighbourhoods": [
+      {"name": "Connaught Place", "aqi": 265, "risk": "Very High"},
+      {"name": "Dwarka", "aqi": 204, "risk": "High"}
+    ]
+  }
+}

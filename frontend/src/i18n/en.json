@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "tagline": "Breathe smarter. Live longer."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "predict": "Predict",
+    "askvayu": "Ask VAYU",
+    "health": "Health",
+    "authority": "Authority"
+  },
+  "dashboard": {
+    "title": "Live urban breathing intelligence",
+    "subtitle": "Hyperlocal and human-centred, built for citizens first.",
+    "safeHours": "Best window to breathe outdoors"
+  },
+  "predict": {
+    "title": "72-hour forecast"
+  }
+}
