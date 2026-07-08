@@ -1,6 +1,8 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://vayu-ai-b011.onrender.com';
+
 function Authority() {
   const downloadReport = async () => {
-    const response = await fetch('/api/reports/generate?city=Vizag');
+    const response = await fetch(`${API_BASE_URL}/api/reports/generate?city=Vizag`);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');

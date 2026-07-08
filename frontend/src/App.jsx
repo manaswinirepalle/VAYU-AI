@@ -9,6 +9,9 @@ import Authority from './pages/Authority';
 import { supportedLanguages } from './data/locationCatalog';
 import { useSocket } from './hooks/useSocket';
 
+// Backend API base URL - production or local
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://vayu-ai-b011.onrender.com';
+
 const tabs = [
   { key: 'dashboard', label: 'Dashboard' },
   { key: 'predict', label: 'Predict' },
@@ -36,10 +39,10 @@ function App() {
       try {
         const apiLocation = normalizeLocation(selectedLocation);
         const [aqiRes, forecastRes, healthRes, recommendationsRes] = await Promise.all([
-          fetch(`/api/aqi/live?city=${apiLocation}`),
-          fetch(`/api/forecast/predict?city=${apiLocation}&hours=24`),
-          fetch(`/api/health/lung-age?age=29&location=${encodeURIComponent(selectedLocation)}&hours_outdoors=2.0`),
-          fetch(`/api/aqi/recommendations?city=${apiLocation}`),
+          fetch(`${API_BASE_URL}/api/aqi/live?city=${apiLocation}`),
+          fetch(`${API_BASE_URL}/api/forecast/predict?city=${apiLocation}&hours=24`),
+          fetch(`${API_BASE_URL}/api/health/lung-age?age=29&location=${encodeURIComponent(selectedLocation)}&hours_outdoors=2.0`),
+          fetch(`${API_BASE_URL}/api/aqi/recommendations?city=${apiLocation}`),
         ]);
         const [aqi, forecast, health, recommendations] = await Promise.all([
           aqiRes.json(),

@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://vayu-ai-b011.onrender.com';
+
 function ChatBot({ chatResponse, setChatResponse }) {
   const [question, setQuestion] = useState('Is it safe for my asthmatic child to go to school today?');
   const [loading, setLoading] = useState(false);
 
   const ask = async () => {
     setLoading(true);
-    const response = await fetch('/api/chatbot/query', {
+    const response = await fetch(`${API_BASE_URL}/api/chatbot/query`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question, city: 'Vizag' }),
